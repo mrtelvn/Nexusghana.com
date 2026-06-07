@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus Professional | Business Management Consultant</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#b30000,#ffd700);
+    color:#fff;
+}
+
+header{
+    background:#000;
+    color:#ffd700;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    color:white;
+    margin-top:10px;
+}
+
+section{
+    padding:40px 20px;
+}
+
+h2{
+    color:#000;
+    background:#ffd700;
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:rgba(0,0,0,0.8);
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.service{
+    background:#000;
+    border:2px solid gold;
+    padding:15px;
+    border-radius:10px;
+}
+
+.contact-btn{
+    display:inline-block;
+    background:gold;
+    color:black;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.contact-btn:hover{
+    background:white;
+}
+
+footer{
+    text-align:center;
+    background:black;
+    color:gold;
+    padding:20px;
+}
+
+/* WhatsApp Button */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    text-decoration:none;
+    z-index:1000;
+}
+
+/* Feedback Popup */
+#feedbackPopup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.8);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup-content{
+    background:white;
+    color:black;
+    width:90%;
+    max-width:450px;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+}
+
+input[type=range]{
+    width:100%;
+}
+
+button{
+    background:gold;
+    color:black;
+    border:none;
+    padding:10px 20px;
+    margin-top:15px;
+    cursor:pointer;
+    border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Nexus Professional</h1>
+<p>Business Management Consulting, Accounting, Tax Consulting, Business Development & Entrepreneurship Support</p>
+</header>
+
+<section>
+<h2>About Us</h2>
+
+<div class="card">
+<p>
+Nexus Professional is a trusted business consulting firm located in Ashaley Botwe, Accra, Ghana. We provide professional solutions in Accounting, Tax Consulting, Business Development, Financial Modelling, Entrepreneurship Support, Mentorship, Career Development and more.
+</p>
+
+<p><strong>Rating:</strong> ⭐ 4.8/5 (10 Reviews)</p>
+
+<a href="tel:+233242368557" class="contact-btn">
+Call Us
+</a>
+</div>
+</section>
+
+<section>
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="service">Business Registration</div>
+<div class="service">Annual Filing & Tax Returns</div>
+<div class="service">Business Proposals & Plans</div>
+<div class="service">Financial Modelling</div>
+<div class="service">Business Diagnosis</div>
+<div class="service">Research & Thesis</div>
+<div class="service">Income Tax Filing</div>
+<div class="service">Payroll Support</div>
+<div class="service">Tax Planning</div>
+<div class="service">Financial Statements</div>
+<div class="service">Accounting Systems</div>
+<div class="service">Entrepreneurship Support</div>
+<div class="service">Personal Development</div>
+<div class="service">Mentorship & Coaching</div>
+<div class="service">Career Guidance</div>
+<div class="service">Employee Development</div>
+
+</div>
+</section>
+
+<section>
+<h2>Contact Information</h2>
+
+<div class="card">
+
+<p><strong>Address:</strong> V120 Tomato Street, Ashaley Botwe, Ghana</p>
+
+<p><strong>Phone:</strong> +233 24 236 8557</p>
+
+<p><strong>Email:</strong> nexusprofessionalgh@gmail.com</p>
+
+<br>
+
+<a href="https://maps.google.com/?q=V120+Tomato+Street+Ashaley+Botwe+Ghana"
+target="_blank"
+class="contact-btn">
+Open Location on Google Maps
+</a>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Nexus Professional. All Rights Reserved.</p>
+</footer>
+
+<!-- WhatsApp Button -->
+<a class="whatsapp"
+href="https://wa.me/233242368557"
+target="_blank">
+💬
+</a>
+
+<!-- Feedback Popup -->
+<div id="feedbackPopup">
+<div class="popup-content">
+
+<h2>Rate Your Experience</h2>
+
+<p>How was your experience on our website?</p>
+
+<br>
+
+<input type="range"
+min="1"
+max="10"
+value="5"
+id="rating">
+
+<p>
+Rating:
+<span id="ratingValue">5</span>/10
+</p>
+
+<button onclick="submitFeedback()">
+Submit
+</button>
+
+</div>
+</div>
+
+<script>
+
+// Show slider value
+const rating = document.getElementById('rating');
+const ratingValue = document.getElementById('ratingValue');
+
+rating.oninput = function(){
+ratingValue.innerHTML = this.value;
+}
+
+// Exit Intent Popup
+document.addEventListener("mouseout", function(e){
+if(e.clientY < 0){
+document.getElementById("feedbackPopup").style.display="flex";
+}
+});
+
+function submitFeedback(){
+let score=document.getElementById("rating").value;
